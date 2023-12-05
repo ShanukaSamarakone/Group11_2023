@@ -1,0 +1,25 @@
+/* Style for map container */
+#map {
+    height: 400px;
+    width: 100%;
+  }
+  
+  /* Style for search bar */
+  .leaflet-control-geocoder-form {
+    background-color: #fff; /* Background color */
+    color: blue; /* Font color */
+    border-radius: 4px;
+    padding: 4px;
+  }
+  
+  /* Style for search results */
+  .leaflet-control-geocoder-results {
+    max-height: 200px; /* Limit maximum height */
+    overflow-y: auto; /* Enable scrollbar if needed */
+  }
+  
+  /* Move the search bar to the left side */
+  .leaflet-top.leaflet-right {
+    left: auto !important;
+    right: 0;
+  }
