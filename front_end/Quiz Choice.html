@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Selector</title>
+    <link rel = "stylesheet" href="quiz choice.css">
+</head>
+<body>
+    <main class="main">
+        <header class = "header">
+            <a href="#" class="logo">QUAURUS</a>
+            <nav class="navbar">
+                <a href="home.html" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <img src="images/profile.png" class = "user-pic" onclick = "toggleMenu()">
+                
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class = "sub-menu">
+                        <div class = "user-info">
+                            <img src = "images/profile.png">
+                            <h2>"temp"</h2>
+                        </div>
+                        <hr>
+
+                        <a href ="#" class="sub-menu-link">
+                            <img src="images/logout.png">
+                            <p>Logout</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    <h1>Welcome to the Quiz Selector</h1>
+
+    <div class="button-container">
+        <button id="Mquiz" onclick="window.location.href='quiz1.html'" class="button quiz1">
+            <img src="images/math.png" alt="Math Icon" class="button-icon">
+            Mathematics Quiz
+        </button>
+        <button id="Equiz" onclick="window.location.href='quiz2.html'" class="button quiz2">
+            <img src="images/english.png" alt="English Icon" class="button-icon">
+            English Quiz
+        </button>
+    </div>
+
+    <script>
+        function loadQuiz(quizPage) {
+            window.location.href = quizPage;
+        }
+    </script>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</main>
+</body>
+</html>
