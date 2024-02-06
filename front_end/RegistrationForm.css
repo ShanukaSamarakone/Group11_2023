@@ -1,0 +1,27 @@
+{
+    Padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body{
+    background: url('profile-picture.jpeg') no-repeat;
+    background-size: cover;
+    color: ;
+}
+
+.registration-form {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+}
+
+.registration-form h1 {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0;
+
+}
