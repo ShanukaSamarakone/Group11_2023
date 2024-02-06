@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    Padding:0;
+    box-sizing: border-box;
+}
+
+
+.Background{
+    min-height: 100vh;
+    width: 100%;
+    background-color:rgb(225, 220, 211) ;
+    background-image: url(/front_end/images/background.png.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+h1 {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.leaderboard {
+    background-color:rgb(17, 17, 18) ;
+    color: #ffffff;
+    width: 40%;
+    height: 450px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+   
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Added a subtle box shadow */
+    
+
+    
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    margin-top: 20px; /* Adjusted the top margin */
+}
+
+th,
+td {
+    padding: 15px; /* Increased padding for better spacing */
+    text-align: center;
+    border: 1px solid #ddd; /* Added a border to the cells */
+}
+    
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Hover effect for table rows */
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

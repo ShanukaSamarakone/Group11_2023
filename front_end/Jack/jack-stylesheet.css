@@ -110,7 +110,7 @@ header #menu {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background-image: url(.//images/background.jpeg);
+  background-image: url(/front_end/images/background.jpeg);
 }
 
 .home h3 {
@@ -209,7 +209,7 @@ header #menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(.//images/background.jpeg);
+  background-image: url(/front_end/images/background.jpeg);
 }
 
 .card-container {
