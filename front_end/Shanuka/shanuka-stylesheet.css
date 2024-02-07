@@ -237,7 +237,7 @@ header #menu {
 }
 
 .card-container .card:hover .card-face.front-face{
-  background:  #095b7b;
+  background:  #09467bf7;
   transform: translateY(0);
 }
 
