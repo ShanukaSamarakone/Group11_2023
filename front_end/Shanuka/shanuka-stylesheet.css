@@ -112,11 +112,11 @@ header #menu {
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  background-image: url(.//background.jpeg);
+  background-image: url(.//images/background.jpeg);
 }
 
 .selection {
-  min-height: 215vh; /* Increase the size for the "Pick Your CV" section */
+  min-height: 222vh; /* Increase the size for the "Pick Your CV" section */
   position: sticky;
   top: 0;
   z-index: 999; /* Ensure it's above other content */
@@ -221,8 +221,8 @@ header #menu {
 }
 
 .card-container .card .card-face{
-  width: 290px;
-  height: 340px;
+  width: 285px;
+  height: 370px;
   transition: 0.5s;
 }
 
@@ -237,7 +237,7 @@ header #menu {
 }
 
 .card-container .card:hover .card-face.front-face{
-  background:  #09467bf7;
+  background:  #00bfff;
   transform: translateY(0);
 }
 
@@ -251,8 +251,9 @@ header #menu {
 }
 
 .card-container .card .card-face.front-face .card-content img{
-  max-width: 1500px;
-  max-height: 200px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-container .card .card-face.front-face .card-content h3{
