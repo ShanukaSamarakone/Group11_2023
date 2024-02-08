@@ -4,6 +4,11 @@
   <title>Map of Uxbridge</title>
   <!-- Include Leaflet CSS for map styling -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="isam-style.css">
+  <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
   
   <style>
     /* CSS styles for the map container */
@@ -34,8 +39,30 @@
   </style>
 </head>
 <body>
+
+  <header>
+    <div id="menu" class="fas fa-bars"></div>
+    <a href="#" class="logo"><i class="fas fa-user-graduate"></i>Quaurus</a>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="/front_end/Jack/home.html">Home</a></li>
+        <li><a href="/front_end/Jack/learn.html">Learn</a></li>
+        <li><a href="/front_end/Salah/Quiz Choice.html">Quiz</a></li>
+        <li><a href="/front_end/Shanuka/shanuka-div.html">CV</a></li>
+        <li><a href="/front_end/Isam/map.html">Map</a></li>
+        <li><a href="/front_end/Sumaiya/leaderboard.html">Leaderboard</a></li>
+      </ul>
+    </nav>
+
+    <a href="/front_end/Areeni/Updated login page.html"><div id="login" class="fas fa-user-circle"></div></a>
+  </header>
+  
+  
+  <section>
   <h1>Map of Uxbridge</h1> <!-- Visible title of the map -->
   <div id="map"></div> <!-- Map container element -->
+  </section>
   
   <!-- Include Leaflet JavaScript library -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
