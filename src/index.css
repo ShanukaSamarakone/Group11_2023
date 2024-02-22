@@ -1,0 +1,13 @@
+
+
+body {
+  margin: 0;
+  place-items: center;
+  height: 100%;
+  width : 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  
+}
+
+
