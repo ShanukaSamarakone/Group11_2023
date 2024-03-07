@@ -1,0 +1,113 @@
+@media (max-width:1100px){
+
+    .about-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content{
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .about-image{
+        margin-right: 0px;
+        margin-bottom: 20px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .about-text p{
+        padding: 0px;
+        font-size: 16px;
+    }
+
+    .about-text h2{
+        font-size: 20px;
+    }
+}
+
+@media (max-width:768px) {
+    html{
+        font-size: 55%;
+    }
+
+    header #menu{
+        display: block;
+    }
+
+    header .navbar{
+        position: fixed;
+        top: -120%; left: 0;
+        width: 100%;
+        background: var(--light-bg);
+    }
+
+    header .navbar ul{
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+
+    header .navbar ul li{
+        margin: 1.5rem 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    header .navbar ul li a{
+        font-size: 2.5rem;
+        display: block;
+    }
+
+    header .navbar.nav-toggle{
+        top: 6.4rem;
+    }
+
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+    .heading{
+        padding: 0px 20px;
+    }
+
+    .heading h1{
+        font-size: 36px;
+    }
+
+    .heading p{
+        font-size: 17px;
+        margin-bottom: 0px;
+    }
+
+    .about-container{
+        padding: 0px;
+        align-items: center
+    }
+
+    .about-content{
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .about-image{
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+     .about-text p{
+        padding: 0px;
+        font-size: 12px;
+     }
+}
+
+
+
+
+  
+
+
+
+
+
+
+

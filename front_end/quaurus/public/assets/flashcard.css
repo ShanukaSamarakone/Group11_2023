@@ -576,3 +576,7 @@ header #menu {
   transform: translate(15px, 15px);
   animation-delay: 0s;
 }
+
+.map-background{
+  background-image: url(/assets/images/background.jpeg);
+}

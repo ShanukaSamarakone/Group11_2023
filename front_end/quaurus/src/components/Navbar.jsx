@@ -21,18 +21,18 @@ function Navbar() {
               <a href="/front_end/Salah/Quiz Choice.html">Quiz</a>
             </li>
             <li>
-              <a href="/front_end/Shanuka/shanuka-div.html">CV</a>
+              <a href="/CV">CV</a>
             </li>
             <li>
-              <a href="/front_end/Isam/map.html">Map</a>
+              <a href="/Map">Map</a>
             </li>
             <li>
-              <a href="/front_end/Sumaiya/leaderboard.html">Leaderboard</a>
+              <a href="/Leaderboard">Leaderboard</a>
             </li>
           </ul>
         </nav>
 
-        <a href="/front_end/Areeni/Updated login page.html">
+        <a href="/Login">
           <div id="login" className="fas fa-user-circle"></div>
         </a>
       </header>
