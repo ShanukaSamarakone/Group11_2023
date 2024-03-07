@@ -93,7 +93,9 @@ function generateCV(event) {
     <p>${experience}</p>
   `;
 
-  // Display CV in popup window
-  var cvOutput = window.opener.document.getElementById('cvOutput');
+  // Display CV below the form
+  var cvOutput = document.getElementById('cvOutput');
   cvOutput.innerHTML = cvHtml;
+
+  window.close();
 }
