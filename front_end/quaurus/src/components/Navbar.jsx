@@ -6,7 +6,7 @@ function Navbar() {
       <header>
         <div id="menu" className="fas fa-bars"></div>
         <a href="#" className="logo">
-          <i className="fas fa-user-graduate"></i>Quaurus
+          <img src="assets/images/owl.png" alt="" />Quaurus
         </a>
 
         <nav className="navbar">

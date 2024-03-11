@@ -145,47 +145,64 @@ function Flashcard() {
     return parts;
   };
 
+  const [showScroll, setShowScroll] = useState(false);
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 100) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 100) {
+      setShowScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkScrollTop);
+    return () => {
+      window.removeEventListener("scroll", checkScrollTop);
+    };
+  }, [showScroll]);
+
   return (
     <div>
       <section id="subjects" className="subjects">
-        <div className="card-container">
-          <div className="card">
-            <div className="card-face front-face">
-              <div className="card-content">
+        <div className="menu-container">
+          <div className="menu-option">
+            <div className="menu menu-subject">
+              <div className="menu-content">
                 <img src="assets/images/mathOwl.png" />
                 <h3>Mathematics</h3>
               </div>
             </div>
-            <div className="card-face back-face">
-              <div className="card-content">
+            <div className="menu menu-link">
+              <div className="menu-content">
                 <p>Ready to learn ?</p>
                 <a href="#maths">Take Me There</a>
               </div>
             </div>
           </div>
-          <div className="card">
-            <div className="card-face front-face">
-              <div className="card-content">
+          <div className="menu-option">
+            <div className="menu menu-subject">
+              <div className="menu-content">
                 <img src="assets/images/englishOwl.png" />
                 <h3>English</h3>
               </div>
             </div>
-            <div className="card-face back-face">
-              <div className="card-content">
+            <div className="menu menu-link">
+              <div className="menu-content">
                 <p>Ready to Learn ?</p>
                 <a href="#english">Take Me There</a>
               </div>
             </div>
           </div>
-          <div className="card">
-            <div className="card-face front-face">
-              <div className="card-content">
+          <div className="menu-option">
+            <div className="menu menu-subject">
+              <div className="menu-content">
                 <img src="assets/images/quizOwl.png" />
                 <h3>Quiz</h3>
               </div>
             </div>
-            <div className="card-face back-face">
-              <div className="card-content">
+            <div className="menu menu-link">
+              <div className="menu-content">
                 <p> Ready for quiz ? </p>
                 <a href="/front_end/Salah/Quiz Choice.html">Take Me There</a>
               </div>
@@ -199,72 +216,80 @@ function Flashcard() {
           <h3>Mathematics</h3>
         </div>
 
-        <div className="container">
-          <div className="flash">
-            <div className="content">
+        <div className="flashcard-container">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{addition.title}</h2>
 
               <p>
-                {addition.flashcard
-                  ? renderFlashcardsWithSpaces(addition.flashcard)
-                  : <span> Data not loaded </span>}
+                {addition.flashcard ? (
+                  renderFlashcardsWithSpaces(addition.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img src="assets/images/addition.png" alt="Addition" />
             </div>
-            <div className="textBx">
+            <div className="flashcard-title">
               <h2>{addition.title}</h2>
             </div>
           </div>
-          <div className="flash">
-            <div className="content">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{subtraction.title}</h2>
               <p>
-                {subtraction.flashcard
-                  ? renderFlashcardsWithSpaces(subtraction.flashcard)
-                  : <span> Data not loaded </span>}
+                {subtraction.flashcard ? (
+                  renderFlashcardsWithSpaces(subtraction.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img src="/assets/images/subtraction.png" alt="Subtraction" />
             </div>
-            <div className="textBx">
+            <div className="flashcard-title">
               <h2>{subtraction.title}</h2>
             </div>
           </div>
-          <div className="flash">
-            <div className="content">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{multiplication.title}</h2>
               <p>
-                {multiplication.flashcard
-                  ? renderFlashcardsWithSpaces(multiplication.flashcard)
-                  : <span> Data not loaded </span>}
+                {multiplication.flashcard ? (
+                  renderFlashcardsWithSpaces(multiplication.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img
                 src="/assets/images/multiplication.png"
                 alt="Multiplication"
               />
             </div>
-            <div className="textBx">
+            <div className="flashcard-title">
               <h2>{multiplication.title}</h2>
             </div>
           </div>
-          <div className="flash">
-            <div className="content">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{division.title}</h2>
               <p>
-                {division.flashcard
-                  ? renderFlashcardsWithSpaces(division.flashcard)
-                  : <span> Data not loaded </span>}
+                {division.flashcard ? (
+                  renderFlashcardsWithSpaces(division.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img src="/assets/images/division.png" alt="Division" />
             </div>
-            <div className="textBx">
+            <div className="flashcard-title">
               <h2>{division.title}</h2>
             </div>
           </div>
@@ -284,48 +309,44 @@ function Flashcard() {
           <h3>Mathematics Continued</h3>
         </div>
 
-        <div className="container">
-          <div className="flash">
-            <div className="content">
+        <div className="flashcard-container">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{fraction.title}</h2>
               <p>
-                {fraction.flashcard
-                  ? renderFlashcardsWithSpaces(fraction.flashcard)
-                  : <span> Data not loaded </span>}
+                {fraction.flashcard ? (
+                  renderFlashcardsWithSpaces(fraction.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img src="/assets/images/fraction.png" />
             </div>
-            <div className="textBx">
+            <div className="flashcard-title">
               <h2>{fraction.title}</h2>
             </div>
           </div>
-          <div className="flash">
-            <div className="content">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{percentage.title}</h2>
               <p>
-                {percentage.flashcard
-                  ? renderFlashcardsWithSpaces(percentage.flashcard)
-                  : <span> Data not loaded </span>}
+                {percentage.flashcard ? (
+                  renderFlashcardsWithSpaces(percentage.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img src="/assets/images/percentage.png" />
             </div>
-            <div className="textBx">
+            <div className="flashcard-title">
               <h2>{percentage.title}</h2>
             </div>
           </div>
         </div>
-
-        <a href="#subjects">
-          <div className="scrollup">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </a>
       </section>
 
       <section id="english" className="english">
@@ -333,81 +354,85 @@ function Flashcard() {
           <h3>English</h3>
         </div>
 
-        <div className="container">
-          <div className="flash">
-            <div className="content">
+        <div className="flashcard-container">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{fullStop.title}</h2>
               <p>
-                {fullStop.flashcard
-                  ? renderFlashcardsWithSpaces(fullStop.flashcard)
-                  : <span> Data not loaded </span>}
+                {fullStop.flashcard ? (
+                  renderFlashcardsWithSpaces(fullStop.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img src="/assets/images/decimal.png" />
             </div>
-            <div className="textBx">
+            <div className="flashcard-title">
               <h2>{fullStop.title}</h2>
             </div>
           </div>
-          <div className="flash">
-            <div className="content">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{comma.title}</h2>
               <p>
-                {comma.flashcard
-                  ? renderFlashcardsWithSpaces(comma.flashcard)
-                  : <span> Data not loaded </span>}
+                {comma.flashcard ? (
+                  renderFlashcardsWithSpaces(comma.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img src="/assets/images/comma.png" />
             </div>
-            <div className="textBx">
+            <div className="flashcard-title">
               <h2>{comma.title}</h2>
             </div>
           </div>
-          <div className="flash">
-            <div className="content">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{questionMark.title}</h2>
               <p>
-                {questionMark.flashcard
-                  ? renderFlashcardsWithSpaces(questionMark.flashcard)
-                  : <span> Data not loaded </span>}
+                {questionMark.flashcard ? (
+                  renderFlashcardsWithSpaces(questionMark.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img src="/assets/images/question-mark.png" />
             </div>
-            <div className="textBx">
+            <div className="flashcard-title">
               <h2>{questionMark.title}</h2>
             </div>
           </div>
-          <div className="flash">
-            <div className="content">
+          <div className="flashcard">
+            <div className="flashcard-content">
               <h2>{exclamationMark.title}</h2>
               <p>
-                {exclamationMark.flashcard
-                  ? renderFlashcardsWithSpaces(exclamationMark.flashcard)
-                  : <span> Data not loaded </span>}
+                {exclamationMark.flashcard ? (
+                  renderFlashcardsWithSpaces(exclamationMark.flashcard)
+                ) : (
+                  <span> Data not loaded </span>
+                )}
               </p>
             </div>
-            <div className="imgBx">
+            <div className="flashcard-image">
               <img src="/assets/images/exclamation-mark.png" />
             </div>
-            <div class="textBx">
+            <div class="flashcard-title">
               <h2>{exclamationMark.title}</h2>
             </div>
           </div>
         </div>
-
-        <a href="#subjects">
-          <div className="scrollup">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </a>
       </section>
+
+      <a href="#subjects" className={`scrollup ${showScroll ? "active" : ""}`}>
+        <i className="fas fa-chevron-up"></i>
+      </a>
     </div>
   );
 }
