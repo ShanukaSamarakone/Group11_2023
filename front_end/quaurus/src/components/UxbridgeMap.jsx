@@ -44,7 +44,7 @@ function UxbridgeMap() {
         ); // Add a marker at the selected location
         marker
           .bindPopup(`<div style="font-size: 10px;">${e.geocode.name}</div>`)
-          .openPopup(); // Show a popup with the location name when clicked
+          .openPopup(); // Show a pop up with the location name when clicked
       });
     }
 
