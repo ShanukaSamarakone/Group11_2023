@@ -25,6 +25,7 @@ function UxbridgeMap() {
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
       }).addTo(mapInstance.current);
+      
       // Create a search control for geocoding (searching locations) within Uxbridge
       const searchControl = L.Control.geocoder({
         defaultMarkGeocode: false, // Disable default marker on geocode
