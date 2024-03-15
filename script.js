@@ -3,7 +3,7 @@ var map = L.map('map').setView([51.5444, -0.476], 15); // Uxbridge coordinates w
 
 // Add OpenStreetMap as the base tile layer to the map
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19, // Set the maximum zoom level
+  maxZoom: 19, // Set the maximum zoom level of 19
 }).addTo(map); // Add the tile layer to the map
 
 // Create a search control for geocoding (searching locations) within Uxbridge
@@ -12,7 +12,7 @@ var searchControl = L.Control.geocoder({
   geocoder: L.Control.Geocoder.nominatim({
     geocodingQueryParams: {
       viewbox: '-0.506,51.525,-0.446,51.563', // Define the boundary box for Uxbridge
-      bounded: 1, // Limit search to within the boundary box
+      bounded: 1, // Limits the search to within the boundary box
     },
   }),
 }).addTo(map); // Add the search control to the map
@@ -21,6 +21,7 @@ var searchControl = L.Control.geocoder({
 searchControl.on('markgeocode', function (e) {
   map.setView(e.geocode.center, 15); // Set the map view to the selected location with zoom level 15
   var marker = L.marker(e.geocode.center).addTo(map); // Add a marker at the selected location
-  marker.bindPopup(e.geocode.name).openPopup(); // Show a popup with the location name when clicked
+  marker.bindPopup(e.geocode.name).openPopup(); // Show a popup with the location name when clicked containing the name of the location and its address
 });
+
 
