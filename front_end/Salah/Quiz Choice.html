@@ -32,23 +32,57 @@
           </header>
 
     <h1>Welcome to the Quiz Selector</h1>
+    <div class="dropdown-wrapper">
+      <div class="dropdown">
+          <div class="dropdown-header">
+              <span class="dropdown-arrow"></span>
+              <span class="dropdown-text">Mathematics Quiz</span>
+          </div>
+          <div class="dropdown-content">
+            <button class="quiz-button">
+              <div class="question-title" onclick="window.location.href='quiz1.html'">Addition Quiz</div>
+            </button>
+            <button class="quiz-button">
+              <div class="question-title">Subtration Quiz</div>
+            </button>
+            <button class="quiz-button">
+              <div class="question-title">Subtraction Quiz</div>
+            </button>
+            <button class="quiz-button">
+              <div class="question-title">Divison Quiz</div>
+            </button>
+            <button class="quiz-button">
+              <div class="question-title">Percentage Quiz</div>
+            </button>
+              
+          </div>
+      </div>
 
-    <div class="button-container">
-        <button id="Mquiz" onclick="window.location.href='quiz1.html'" class="button quiz1">
-            <img src="/front_end/images/math.png" alt="Math Icon" class="button-icon">
-            Mathematics Quiz
-        </button>
-        <button id="Equiz" onclick="window.location.href='quiz2.html'" class="button quiz2">
-            <img src="/front_end/images/english.png" alt="English Icon" class="button-icon">
-            English Quiz
-        </button>
-    </div>
-
+      <div class="dropdown">
+          <div class="dropdown-header">
+              <span class="dropdown-arrow"></span>
+              <span class="dropdown-text">English Quiz</span>
+          </div>
+          <div class="dropdown-content">
+            <button class="quiz-button">
+              <div class="question-title">Full Stop Quiz</div>
+            </button>
+            <button class="quiz-button">
+              <div class="question-title">Comma Quiz</div>
+            </button>
+            <button class="quiz-button">
+              <div class="question-title">Exclamation Mark Quiz</div>
+          </button>
+          </div>
+      </div>
+  </div>
     <script>
         function loadQuiz(quizPage) {
             window.location.href = quizPage;
         }
     </script>
+    <script src="Questions.js"></script>
+
     <script>
         let subMenu = document.getElementById("subMenu");
 
