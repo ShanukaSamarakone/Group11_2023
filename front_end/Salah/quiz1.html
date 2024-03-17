@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QUIZ</title>
     <link rel="stylesheet" href="Quiz.css">
+    <link rel = "stylesheet" href="quiz choice.css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
     <style>
         .black-text {
             color: black;
         }
     </style>
 </head>
-
 <body>
     <main class="main">
-        <header class="header">
-            <a href="#" class="logo">QUAURUS</a>
+        <header>
+            <div id="menu" class="fas fa-bars"></div>
+            <a href="#" class="logo"><i class="fas fa-user-graduate"></i>Quaurus</a>
             <nav class="navbar">
-                <a href="#" class="active">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-                <img src="images/profile.png" class="user-pic" onclick="toggleMenu()">
-
-                <div class="sub-menu-wrap" id="subMenu">
-                    <div class="sub-menu">
-                        <div class="user-info">
-                            <img src="images/profile.png">
-                            <h2>"insert user name here"</h2>
-                        </div>
-                        <hr>
-
-                        <a href="#" class="sub-menu-link">
-                            <img src="images/logout.png">
-                            <p>Logout</p>
-                            <span>></span>
-                        </a>
-                    </div>
-                </div>
+                <ul>
+                    <li><a href="/front_end/Jack/home.html">Home</a></li>
+                    <li><a href="/front_end/Jack/learn.html">Learn</a></li>
+                    <li><a href="/front_end/Salah/Quiz Choice.html">Quiz</a></li>
+                    <li><a href="/front_end/Shanuka/shanuka-div.html">CV</a></li>
+                    <li><a href="/front_end/Isam/map.html">Map</a></li>
+                    <li><a href="/front_end/Sumaiya/leaderboard.html">Leaderboard</a></li>
+                </ul>
             </nav>
+            <a href="/front_end/Areeni/Updated login page.html">
+                <div id="login" class="fas fa-user-circle"></div>
+            </a>
         </header>
-
         <!-- Question 1 -->
         <section class="page home" id="page1">
             <div class="home-content">
@@ -50,7 +43,6 @@
                 <button class="Next" onclick="changePage()">Next</button>
             </div>
         </section>
-
         <!-- Answer 1 -->
         <section class="page Questions" id="page2" style="display: none;">
             <div class="content">
@@ -91,6 +83,48 @@
                 <h1 class="black-text" id="answerText3">ANSWERS GO HERE</h1>
                 <input type="text" id="user-answer3" placeholder="Your answer">
                 <button class="Submit" onclick="checkAnswer(3)">Submit Answer</button>
+            </div>
+        </section>
+
+         <!-- Question 4 -->
+        <section class="page home" id="page7" style="display: none;">
+            <div class="home-content">
+                <h1 class="black-text" id="questionText4"></h1>
+                <button class="Next" onclick="changePage()">Next</button>
+            </div>
+        </section>
+
+        <!-- Answer 4 -->
+        <section class="page Questions" id="page8" style="display: none;">
+            <div class="content">
+                <h1 class="black-text" id="answerText4">ANSWERS GO HERE</h1>
+                <input type="text" id="user-answer4" placeholder="Your answer">
+                <button class="Submit" onclick="checkAnswer(4)">Submit Answer</button>
+            </div>
+        </section>
+
+        <!-- Question 5 -->
+        <section class="page home" id="page9" style="display: none;">
+            <div class="home-content">
+                <h1 class="black-text" id="questionText5"></h1>
+                <button class="Next" onclick="changePage()">Next</button>
+            </div>
+        </section>
+
+        <!-- Answer 5 -->
+        <section class="page Questions" id="page10" style="display: none;">
+            <div class="content">
+                <h1 class="black-text" id="answerText5">ANSWERS GO HERE</h1>
+                <input type="text" id="user-answer5" placeholder="Your answer">
+                <button class="Submit" onclick="checkAnswer(5)">Submit Answer</button>
+            </div>
+        </section>
+        <!-- Score page -->
+        <section class="score page" id="page11" style="display: none;">
+            <div class="content">
+                <h1 class="black-text" id="EndPage"></h1>
+                <span class="black-text" id="score">Your Score: 5</span>
+                <button class="Return" onclick="window.location.href='quiz choice.html'">Return</button>
             </div>
         </section>
 

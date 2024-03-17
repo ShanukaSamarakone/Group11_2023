@@ -6,4 +6,3 @@ $(document).ready(function(){
         $('.navbar').toggleClass('nav-toggle');
     });
 });
-

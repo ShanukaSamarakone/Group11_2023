@@ -25,6 +25,7 @@ function UxbridgeMap() {
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
       }).addTo(mapInstance.current);
+      
       // Create a search control for geocoding (searching locations) within Uxbridge
       const searchControl = L.Control.geocoder({
         defaultMarkGeocode: false, // Disable default marker on geocode
@@ -44,7 +45,7 @@ function UxbridgeMap() {
         ); // Add a marker at the selected location
         marker
           .bindPopup(`<div style="font-size: 10px;">${e.geocode.name}</div>`)
-          .openPopup(); // Show a popup with the location name when clicked
+          .openPopup(); // Show a pop up with the location name when clicked
       });
     }
 

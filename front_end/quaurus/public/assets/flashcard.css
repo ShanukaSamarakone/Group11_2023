@@ -63,8 +63,8 @@ header .logo {
   align-items: center;
 }
 
-header .logo i {
-  color: var(--green);
+header .logo img {
+  max-width: 50px;
 }
 
 header .navbar ul {
@@ -200,7 +200,7 @@ header #menu {
   color: var(--black);
 }
 
-/* Learn Section */
+/* Learn Menu Section */
 
 .subjects{
   margin: 0;
@@ -211,24 +211,24 @@ header #menu {
   background-image: url(/assets/images/background.jpeg);
 }
 
-.card-container {
+.menu-container {
   width: 1000px;
   position: relative;
   display: flex;
   justify-content: space-between;
 }
 
-.card-container .card{
+.menu-container .menu-option{
   position: relative;
 }
 
-.card-container .card .card-face{
+.menu-container .menu-option .menu{
   width: 300px;
   height: 200px;
   transition: 0.5s;
 }
 
-.card-container .card .card-face.front-face{
+.menu-container .menu-option .menu.menu-subject{
   position: relative;
   background: #333;
   display: flex;
@@ -238,27 +238,27 @@ header #menu {
   transform: translateY(100px);
 }
 
-.card-container .card:hover .card-face.front-face{
+.menu-container .menu-option:hover .menu.menu-subject{
   background: var(--green);
   transform: translateY(0);
 }
 
 
-.card-container .card .card-face.front-face .card-content{
+.menu-container .menu-option .menu.menu-subject .menu-content{
   opacity: 0.2;
   transition: 0.5s;
 }
 
-.card-container .card:hover .card-face.front-face .card-content{
+.menu-container .menu-option:hover .menu.menu-subject .menu-content{
   opacity: 1;
 }
 
-.card-container .card .card-face.front-face .card-content img{
+.menu-container .menu-option .menu.menu-subject .menu-content img{
   max-width: 100px;
   max-height: 89px;
 }
 
-.card-container .card .card-face.front-face .card-content h3{
+.menu-container .menu-option .menu.menu-subject .menu-content h3{
   margin: 10px 0 0;
   padding: 0;
   color: var(--white);
@@ -266,7 +266,7 @@ header #menu {
   font-size: 1.5rem;
 }
 
-.card-container .card .card-face.back-face{
+.menu-container .menu-option .menu.menu-link{
   position: relative;
   background: var(--black);
   display: flex;
@@ -278,17 +278,17 @@ header #menu {
   transform: translateY(-100px);
 }
 
-.card-container .card:hover .card-face.back-face{
+.menu-container .menu-option:hover .menu.menu-link{
   transform: translateY(0);
 }
 
-.card-container .card .card-face.back-face p{
+.menu-container .menu-option .menu.menu-link p{
   margin: 0;
   padding: 0;
   color: var(--white);
 }
 
-.card-container .card .card-face.back-face .card-content a{
+.menu-container .menu-option .menu.menu-link .menu-content a{
   margin: 15px 0 0;
   display: inline-block;
   text-decoration: none;
@@ -298,7 +298,7 @@ header #menu {
   border: 1px solid var(--white);
 }
 
-.card-container .card .card-face.back-face .card-content a:hover{
+.menu-container .menu-option .menu.menu-link .menu-content a:hover{
   background: var(--black);
   color: var(--green);
 }
@@ -353,7 +353,7 @@ header #menu {
   position: relative;
 }
 
-.container{
+.flashcard-container{
   position: relative;
   display: flex;
   justify-content: center;
@@ -362,7 +362,7 @@ header #menu {
   flex-wrap: wrap;
 }
 
-.container .flash{
+.flashcard-container .flashcard{
   position: relative;
   width: 300px;
   height: 400px;
@@ -374,7 +374,7 @@ header #menu {
   box-shadow: 0 0 0 5px var(--black);
 }
 
-.container .flash .content{
+.flashcard-container .flashcard .flashcard-content{
   position: absolute;
   inset: 0;
   display: flex;
@@ -388,25 +388,25 @@ header #menu {
   opacity: 0;
 }
 
-.container .flash:hover .content{
+.flashcard-container .flashcard:hover .flashcard-content{
   opacity: 1;
   transition-delay: 0.5s;
 }
 
-.container .flash .content h2{
+.flashcard-container .flashcard .flashcard-content h2{
   color: var(--green);
   font-weight: 600;
   letter-spacing: 0.1rem;
 }
 
-.container .flash .content p{
+.flashcard-container .flashcard .flashcard-content p{
   text-align: center;
   color: var(--white);
   font-size: 1.25rem;
 }
 
-.container .flash .imgBx, 
-.container .flash .textBx{
+.flashcard-container .flashcard .flashcard-image, 
+.flashcard-container .flashcard .flashcard-title{
   position: relative;
   width: 100%;
   display: flex;
@@ -415,18 +415,18 @@ header #menu {
   transition: 0.5s;
 }
 
-.container .flash .imgBx{
+.flashcard-container .flashcard .flashcard-image{
   background: var(--white);
   height: 120px;
   z-index: 1;
   transform-origin: bottom;
 }
 
-.container .flash:hover .imgBx{
+.flashcard-container .flashcard:hover .flashcard-image{
   transform: translateY(-100%) rotateX(90deg);
 }
 
-.container .flash .textBx{
+.flashcard-container .flashcard .flashcard-title{
   height: 280px;
   background: var(--green);
   border-top: 8px solid var(--black);
@@ -436,11 +436,11 @@ header #menu {
   overflow: hidden;
 }
 
-.container .flash:hover .textBx{
+.flashcard-container .flashcard:hover .flashcard-title{
   transform: translateY(100%) rotateX(90deg);
 }
 
-.container .flash .textBx h2{
+.flashcard-container .flashcard .flashcard-title h2{
   font-size: 1.5rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -451,7 +451,7 @@ header #menu {
   box-shadow: 0 0 0 5px var(--black);
 }
 
-.container .flash .imgBx::before{
+.flashcard-container .flashcard .flashcard-image::before{
   content: '';
   position: absolute;
   bottom: -70px;
@@ -465,14 +465,14 @@ header #menu {
   z-index: 1;
 }
 
-.container .flash .imgBx img{
+.flashcard-container .flashcard .flashcard-image img{
   position: relative;
   top: 50px;
   max-width: 100px;
   z-index: 1000;
 }
 
-.container .flash .textBx::before{
+.flashcard-container .flashcard .flashcard-title::before{
   content: '';
   position: absolute;
   top: -8px;
@@ -482,6 +482,8 @@ header #menu {
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
 }
+
+/* Scroll Button */
 
 .scrolldown{
   position: absolute;
@@ -539,43 +541,32 @@ header #menu {
   }
 }
 
-.scrollup{
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  background: var(--white);
-  transform: translateY(-80px) translateX(-50%) rotate(225deg);
-}
-
-.scrollup span{
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-bottom: 2px solid var(--black);
-  border-right: 2px solid var(--black);
-  animation: animate 1s linear infinite;
+.scrollup {
+  background: var(--green);
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--black);
+  text-decoration: none;
   opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
 }
 
-.scrollup span:nth-child(1){
-  transform: translate(-15px, -15px);
-  animation-delay: -0.4s;
+.scrollup.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
 }
 
-.scrollup span:nth-child(2){
-  transform: translate(0, 0);
-  animation-delay: -0.2s;
-}
-
-.scrollup span:nth-child(3){
-  transform: translate(15px, 15px);
-  animation-delay: 0s;
-}
+/* Map Background */
 
 .map-background{
   background-image: url(/assets/images/background.jpeg);
