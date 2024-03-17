@@ -37,7 +37,7 @@ html {
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100vh;
-    background-image: url(images/background.jpeg);
+    background-image: url(front_end/images/background.jpeg);
 }
 
 /* Navigation Bar */
