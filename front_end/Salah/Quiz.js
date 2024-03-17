@@ -1,10 +1,13 @@
-let temporaryAnswers = ['4', '10', '15'];
+let temporaryAnswers = ['4', '10', '15','13','18'];
 let currentQuestionIndex = 0;
 let pageCount = 1
+let score = 5;
 let temporaryQuestions = [
     "What is 2 + 2?",
     "What is 4 + 6?",
     "What is 5 + 10?",
+    "What is 3 + 10?",
+    "What is 8 + 10?"
 ];
 
 function displayQuestion() {
@@ -43,7 +46,12 @@ function changePage() {
             displayQuestion();
         }
     } else {
-        alert('Quiz completed!');
+        const nextPage = document.getElementById(`page11`); // Target the score page directly
+        nextPage.style.display = 'block';
+
+        const currentPage = document.getElementById(`page${pageCount - 1}`);
+        currentPage.style.display = 'none';
+        updateScore();
     }
 }
 
@@ -55,12 +63,26 @@ function checkAnswer(questionNumber) {
 
     if (userAnswer === temporaryAnswers[questionNumber - 1]) {
         answerTextElement.textContent = 'Correct!';
-        submitButton.style.display = 'none';
-        nextButton.style.display = 'block';
+        if (submitButton) {
+            submitButton.style.display = 'none';
+        }
+        if (nextButton) {
+            nextButton.style.display = 'block';
+        }
         setTimeout(() => changePage(), 1000);
     } else {
-        answerTextElement.textContent = 'Incorrect. Try again.';
+        answerTextElement.textContent = 'Incorrect.';
+        score = score - 1;
+        if (submitButton) {
+            submitButton.style.display = 'none';
+        }
+        setTimeout(() => changePage(), 1000);
     }
+}
+
+function updateScore() {
+    const scoreElement = document.getElementById('score');
+    scoreElement.textContent = `Your Score: ${score}/5`;
 }
 
 displayQuestion();
