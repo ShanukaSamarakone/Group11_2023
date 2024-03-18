@@ -32,7 +32,7 @@ function UxbridgeMap() {
         geocoder: L.Control.Geocoder.nominatim({
           geocodingQueryParams: {
             viewbox: "-0.506,51.525,-0.446,51.563", // Define the boundary box for Uxbridge
-            bounded: 1, // Limit search to within the boundary box
+            bounded: 1, // Limits the search to within the boundary box
           },
         }),
       }).addTo(mapInstance.current); // Add the search control to the map
@@ -45,25 +45,26 @@ function UxbridgeMap() {
         ); // Add a marker at the selected location
         marker
           .bindPopup(`<div style="font-size: 10px;">${e.geocode.name}</div>`)
-          .openPopup(); // Show a pop up with the location name when clicked
+          .openPopup(); // Shows a pop-up with the location name when clicked
 
         
+        // Sends the search history to the database (back-end server)
         fetch("http://localhost:8080/addLocation", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            query: e.geocode.name,
+            query: e.geocode.name, // Sends the name of the searched location to the database
           }),
         })
-          .then((response) => response.json())
+          .then((response) => response.json()) // Gets a reponse from the database
           .then((data) => {
-            console.log("Search history has been stored: ", data);
+            console.log("Search history has been stored: ", data); // Shows that the data was store sucessfully
           })
 
           .catch((error) => {
-            console.error("Search history could not be stored: ", error);
+            console.error("Search history could not be stored: ", error); // Shows that there was an error trying to store the data
           });
         });
       }
@@ -72,7 +73,7 @@ function UxbridgeMap() {
     return () => {
       if (mapInstance.current) {
         mapInstance.current.remove(); // This properly cleans up the map instance
-        mapInstance.current = null; // Reset the map instance reference
+        mapInstance.current = null; // Resets the map instance reference
       }
     };
   }, []); // Empty dependency array means this effect runs only once on mount
@@ -80,6 +81,7 @@ function UxbridgeMap() {
   return <div ref={mapRef} style={{ height: "400px", width: "100%" }} />; // The map container
 }
 export default UxbridgeMap;
+
 
 
 
