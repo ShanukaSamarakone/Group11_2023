@@ -25,7 +25,7 @@ function UxbridgeMap() {
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
       }).addTo(mapInstance.current);
-      
+
       // Create a search control for geocoding (searching locations) within Uxbridge
       const searchControl = L.Control.geocoder({
         defaultMarkGeocode: false, // Disable default marker on geocode
@@ -47,27 +47,33 @@ function UxbridgeMap() {
           .bindPopup(`<div style="font-size: 10px;">${e.geocode.name}</div>`)
           .openPopup(); // Show a pop up with the location name when clicked
 
-        
         // Sends the search history to the database (back-end server)
+        // Ensure e.geocode.name is populated correctly before proceeding
+        
+        
         fetch("http://localhost:8080/addLocation", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            query: e.geocode.name, // Sends the name of the searched location to the database
+            query: { location: e.geocode.name }, // Send the searched location
           }),
         })
-          .then((response) => response.json()) // Gets a reponse from the database
-          .then((data) => {
-            console.log("Search history has been stored: ", data); // Shows that the data was store sucessfully
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
           })
-
+          .then((data) => {
+            console.log("Search history has been stored:", data);
+          })
           .catch((error) => {
-            console.error("Search history could not be stored: ", error); // Shows that there was an error trying to store the data
+            console.error("Error storing search history:", error);
           });
-        });
-      }
+      });
+    }
 
     // Cleanup function to run when the component unmounts
     return () => {
@@ -81,5 +87,3 @@ function UxbridgeMap() {
   return <div ref={mapRef} style={{ height: "400px", width: "100%" }} />; // The map container
 }
 export default UxbridgeMap;
-
-
