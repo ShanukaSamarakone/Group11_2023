@@ -51,15 +51,18 @@ function UxbridgeMap() {
         // Ensure e.geocode.name is populated correctly before proceeding
         
         
-        fetch("http://localhost:8080/addLocation", {
+        // Sends the search query to the backend server to be stored in the database
+        fetch("http://localhost:8080/addLocation", { 
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            query: { location: e.geocode.name }, // Send the searched location
+            query: { location: e.geocode.name }, // Sends the name searched location to the backend server to be stored in the databse
           }),
         })
+
+          // Gets a reponse from the database
           .then((response) => {
             if (!response.ok) {
               throw new Error("Network response was not ok");
@@ -67,10 +70,10 @@ function UxbridgeMap() {
             return response.json();
           })
           .then((data) => {
-            console.log("Search history has been stored:", data);
+            console.log("Search history has been stored:", data); // Shows that the data was store sucessfully
           })
           .catch((error) => {
-            console.error("Error storing search history:", error);
+            console.error("Error storing search history:", error); // Shows that there was an error trying to store the data
           });
       });
     }
