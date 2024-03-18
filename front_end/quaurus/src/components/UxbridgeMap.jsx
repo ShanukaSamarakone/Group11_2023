@@ -46,8 +46,27 @@ function UxbridgeMap() {
         marker
           .bindPopup(`<div style="font-size: 10px;">${e.geocode.name}</div>`)
           .openPopup(); // Show a pop up with the location name when clicked
-      });
-    }
+
+        
+        fetch("http://localhost:8080/addLocation", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            query: e.geocode.name,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Search history has been stored: ", data);
+          })
+
+          .catch((error) => {
+            console.error("Search history could not be stored: ", error);
+          });
+        });
+      }
 
     // Cleanup function to run when the component unmounts
     return () => {
@@ -61,3 +80,5 @@ function UxbridgeMap() {
   return <div ref={mapRef} style={{ height: "400px", width: "100%" }} />; // The map container
 }
 export default UxbridgeMap;
+
+
