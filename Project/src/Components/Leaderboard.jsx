@@ -1,26 +1,8 @@
-import axios from 'axios'
+import axios from 'axios'//call api from data import.
 import "./leaderboard.css";
 import { useState, useEffect } from 'react';
 
 
-// const userss = [
-//   { imgSrc: "./src/assets/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg", name: "John Doe", score: 5000 },
-//   { imgSrc: "./src/assets/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg", name: "Jane Smith", score: 4500 },
-//   { imgSrc: "./src/assets/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg", name: "Alice Johnson", score: 4000 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Bob Brown", score: 3500 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-//   { imgSrc: "./src/assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg", name: "Emily Davis", score: 3200 },
-
-// ];
 
 
 
@@ -28,9 +10,9 @@ const Leaderboard = () => {
   const [users, setUsers] = useState([]);
 
 useEffect(() => {
-  axios.get("http://localhost:3000/leaderboard")
+  axios.get("http://localhost:3000/leaderboard")//Api called from database 
       .then((res) => {
-        setUsers(res.data.data.sort((a, b) => b.total_score - a.total_score));
+        setUsers(res.data.data.sort((a, b) => b.total_score - a.total_score));//sorting data in descending order.
         console.log("res",res.data.data);
       })
       .catch((err) => {

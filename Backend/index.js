@@ -8,8 +8,8 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/leaderboard",userController.getUsers)
+app.get("/leaderboard",userController.getUsers)//API created.Call API from frontened which return data .
 
 app.listen(3000, () => {
-    console.log("server is Started!!")
+    console.log("server is Started!!")//portnumber
 })
