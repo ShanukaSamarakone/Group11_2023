@@ -116,11 +116,10 @@ function generateCV(event) {
           console.log('CV data saved successfully');
           document.getElementById('cvForm').reset(); // Optionally reset the form
       } else {
-          console.error('Failed to save CV data');
+          console.error('Failed to save CV data:', response.status, response.statusText);
       }
   })
   .catch(error => {
       console.error('Error:', error);
   });
 }
-  
