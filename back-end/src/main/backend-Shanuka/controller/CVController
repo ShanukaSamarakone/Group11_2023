@@ -1,0 +1,29 @@
+package com.quaurus.cv.controller;
+
+import com.quaurus.cv.model.CV;
+import com.quaurus.cv.service.CVService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+
+@RestController
+@RequestMapping("/cv")
+@CrossOrigin("http://localhost:3000")
+
+public class CVController {
+
+    @Autowired
+    private CVService cvServiceImp;
+
+    @PostMapping("/addCV")
+    public CV postDetails(@RequestBody CV cv)
+    {
+        return cvServiceImp.saveDetails(cv);
+    }
+
+    @GetMapping("/getCVByID/{id}")
+    public CV fetchDetailsById(@PathVariable int id)
+    {
+        return cvServiceImp.getCVDetailsUsingId(id);
+    }
+}
