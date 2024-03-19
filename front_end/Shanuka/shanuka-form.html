@@ -60,34 +60,6 @@
     <div id="cvOutput"></div>
   </div>
 
-  <script>
-    function generateCV(event) {
-      event.preventDefault(); // Prevent form submission
-
-      // Get form data
-      var name = document.getElementById('name').value;
-      var dob = document.getElementById('dob').value;
-      var address = document.getElementById('address').value;
-      var skills = document.getElementById('skills').value;
-      var experience = document.getElementById('experience').value;
-
-      // Generate CV HTML
-      var cvHtml = `
-        <h2>Generated CV</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>DOB:</strong> ${dob}</p>
-        <p><strong>Address:</strong> ${address}</p>
-        <p><strong>Skills:</strong></p>
-        <p>${skills}</p>
-        <p><strong>Experience:</strong></p>
-        <p>${experience}</p>
-      `;
-
-      // Display CV in the same window
-      var cvOutput = document.getElementById('cvOutput');
-      cvOutput.innerHTML = cvHtml;
-    }
-  </script>
-  
+  <script src="cv.js"> </script>
 </body>
 </html>
