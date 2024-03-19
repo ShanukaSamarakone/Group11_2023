@@ -6,66 +6,7 @@ function openCVGenerator() {
   var options = "width=" + popupWidth + ",height=" + popupHeight + ",left=" + left + ",top=" + top;
   var popupWindow = window.open("", "_blank", options);
   popupWindow.document.write(`
-      <html>
-      <head>
-          <title>CV Generator</title>
-          <style>
-              body {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  height: 100vh;
-                  margin: 0;
-                  background-image: url('Images/background.jpeg');
-                  background-size: cover;
-                  background-position: center;
-              }
-              .container {
-                  width: 90%;
-                  height: 75%;
-                  max-width: 700px;
-                  background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background */
-                  padding: 20px;
-                  border-radius: 10px;
-                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
-              }
-
-              h2{
-                  font-size: 2.2rem;
-                  color: #00e77f;
-              }
-
-              form {
-                  width: 100%;
-              }
-
-              form label,
-              form input,
-              form textarea {
-                  margin-bottom: 20px;
-              }
-          </style>
-      </head>
-      <body>
-          <div class="container">
-              <h2><center>Let's Begin</center></h2>
-              <form id="cvForm" onsubmit="generateCV(event)">
-                  <label for="name">Name:</label><br>
-                  <input type="text" id="name" name="name" required><br>
-                  <label for="dob">DOB:</label><br>
-                  <input type="date" id="dob" name="dob" required><br>
-                  <label for="address">Address:</label><br>
-                  <input type="text" id="address" name="address" required><br>
-                  <label for="skills">Skills:</label><br>
-                  <textarea id="skills" name="skills" rows="4" cols="50" required></textarea><br>
-                  <label for="experience">Experience:</label><br>
-                  <textarea id="experience" name="experience" rows="4" cols="50" required></textarea><br><br>
-                  <input type="submit" value="Generate">
-              </form>
-              <div id="cvOutput"></div>
-          </div>
-      </body>
-      </html>
+     
   `);
 }
 

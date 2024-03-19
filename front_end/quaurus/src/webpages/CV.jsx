@@ -1,13 +1,17 @@
 import React from "react";
-
-function CV() {
-    const openPopup = (imageUrl) => {
-        const width = 1050;
-        const height = 650;
-        const left = (window.screen.width / 2) - (width / 2);
-        const top = (window.screen.height / 2) - (height / 2);
-        window.open(imageUrl, '_blank', `width=${width}, height=${height}, left=${left}, top=${top}`);
-      };
+  
+function CV(){   
+  const openCVGenerator=()=> { 
+  
+  var popupWidth = 900; // Adjust as needed
+  var popupHeight = 700; // Adjust as needed
+  var left = (window.screen.width - popupWidth) / 2;
+  var top = (window.screen.height - popupHeight) / 2;
+  var options = "width=" + popupWidth + ",height=" + popupHeight + ",left=" + left + ",top=" + top;
+  var popupWindow = window.open("", "_blank", options);
+  popupWindow.document.write(`
+  `);
+  }
   return (
     <div>
       <section className="home" id="home">
@@ -22,7 +26,7 @@ function CV() {
           <h3>Pick Your CV</h3>
 
           <div className="cv-container">
-            <div className="cv" onClick={() => openPopup('assets/images/CV1.jpg')}>
+            <div className="cv" ondbclick={() => openCVGenerator()}>
               <div className="cv-face cvs-face">
                 <div className="cv-content">
                   <img src="assets/images/CV1.jpg" />
@@ -30,7 +34,7 @@ function CV() {
               </div>
             </div>
 
-            <div className="cv" onClick={() => openPopup('assets/images/CV2.jpg')}>
+            <div className="cv" ondbclick={() => openCVGenerator()}>
               <div className="cv-face cvs-face">
                 <div className="cv-content">
                   <img src="assets/images/CV2.jpg" />
@@ -38,7 +42,7 @@ function CV() {
               </div>
             </div>
 
-            <div className="cv" onClick={() => openPopup('assets/images/CV3.jpg')}>
+            <div className="cv" ondbclick={() => openCVGenerator()}>
               <div className="cv-face cvs-face">
                 <div className="cv-content">
                   <img src="assets/images/CV3.jpg" />
@@ -46,7 +50,7 @@ function CV() {
               </div>
             </div>
 
-            <div className="cv" onClick={() => openPopup('assets/images/CV4.jpg')}>
+            <div className="cv" ondbclick={() => openCVGenerator()}>
               <div className="cv-face cvs-face">
                 <div className="cv-content">
                   <img src="assets/images/CV4.jpg" />
@@ -54,7 +58,7 @@ function CV() {
               </div>
             </div>
 
-            <div className="cv" onClick={() => openPopup('assets/images/CV5.jpg')}>
+            <div className="cv" ondbclick={() => openCVGenerator()}>
               <div className="cv-face cvs-face">
                 <div className="cv-content">
                   <img src="assets/images/CV5.jpg" />
@@ -63,7 +67,7 @@ function CV() {
               |
             </div>
 
-            <div className="cv" onClick={() => openPopup('assets/images/CV6.jpg')}>
+            <div className="cv" ondbclick={() => openCVGenerator()}>
               <div className="cv-face cvs-face">
                 <div className="cv-content">
                   <img src="assets/images/CV6.jpg" />
@@ -71,7 +75,7 @@ function CV() {
               </div>
             </div>
 
-            <div className="cv" onClick={() => openPopup('assets/images/CV7.jpg')}>
+            <div className="cv" ondbclick={() => openCVGenerator()}>
               <div className="cv-face cvs-face">
                 <div className="cv-content">
                   <img src="assets/images/CV7.jpg" />
@@ -79,7 +83,7 @@ function CV() {
               </div>
             </div>
 
-            <div className="cv" onClick={() => openPopup('assets/images/CV8.jpg')}>
+            <div className="cv" ondbclick={() => openCVGenerator()}>
               <div className="cv-face cvs-face">
                 <div className="cv-content">
                   <img src="assets/images/CV8.jpg" />
@@ -88,7 +92,7 @@ function CV() {
               |
             </div>
 
-            <div className="cv" onClick={() => openPopup('assets/images/CV9.jpg')}>
+            <div className="cv" ondbclick={() => openCVGenerator()}>
               <div className="cv-face cvs-face">
                 <div className="cv-content">
                   <img src="assets/images/CV9.jpg" />
@@ -98,11 +102,12 @@ function CV() {
           </div>
         </div>
       </section>
+
       <footer>
         <p>&copy; 2024 Quaurus. All rights reserved.</p>
       </footer>
     </div>
   );
-}
+  }
 
 export default CV;
