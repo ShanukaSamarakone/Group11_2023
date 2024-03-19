@@ -20,7 +20,7 @@
   min-height: 200px; /* Minimum height to ensure it doesn't look too small */
   max-height: 530px; /* Maximum height before scrolling */
   margin: 20px auto;
-  background-color: #B19470;
+  background-color: #b5b8b6;
   border-radius: 10px;
   padding: 20px;
   display: flex; /* Use flex layout */
@@ -51,7 +51,7 @@
 }
 .top3 .user .score {
   margin-left: auto;
-  color: #feffff;
+  color: #6f06f8;
 }
 /* .user-list {
   list-style-type: none;
@@ -99,7 +99,7 @@
 .centered{
   text-align: center;
   padding: 10px;
-  background-color: #DED0B6;
+  background-color: #b4b5b2;
   border-radius: 10px;
   /* width: 100%; */
   margin: 0;

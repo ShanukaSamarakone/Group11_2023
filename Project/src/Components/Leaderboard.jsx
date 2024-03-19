@@ -30,7 +30,7 @@ const Leaderboard = () => {
 useEffect(() => {
   axios.get("http://localhost:3000/leaderboard")
       .then((res) => {
-        setUsers(res.data.data.sort((a, b) => b.score - a.score));
+        setUsers(res.data.data.sort((a, b) => b.total_score - a.total_score));
         console.log("res",res.data.data);
       })
       .catch((err) => {
@@ -47,8 +47,8 @@ useEffect(() => {
             <div className="user" key={index}>
               <img src="assets/flat-business-woman-user-profile-avatar-icon-vector-4334111.jpg" alt="Profile Picture" />
               <span className="Top-rank"><strong>{index+1}.</strong>  </span>
-              <span className="name">{user.Name}</span>
-              <span className="score">{user.score}</span>
+              <span className="name">{user.user_username}</span>
+              <span className="score"><b>{user.total_score}</b></span>
             </div>
           ))}
         </div>
@@ -57,8 +57,8 @@ useEffect(() => {
             <li key={index + 3}> 
               <img src="assets/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" alt="Profile Picture" />
               <span className="rank"><strong>{index+4}.</strong></span>
-              <span className="name">{user.Name}</span>
-              <span className="score">{user.score}</span>
+              <span className="name">{user.user_username}</span>
+              <span className="score"><b>{user.total_score}</b></span>
             </li>
           ))}
         </ul>
