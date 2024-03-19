@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace 
+namespace Group1_2023
 {
     public partial class YourForm : Form
     {
