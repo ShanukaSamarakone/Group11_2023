@@ -71,7 +71,7 @@ function CV() {
         <body>
             <div class="container">
                 <h2><center>Let's Begin</center></h2>
-                <form id="cvForm" onSubmit={handleSubmit}>
+                <form id="cvForm" onSubmit={handleSubmit}> 
                 <label htmlFor="name">Name:</label><br>
                 <input type="text" id="name" name="name" required /><br>
                 <label htmlFor="dob">DOB:</label><br>
@@ -83,7 +83,7 @@ function CV() {
                 <label htmlFor="experience">Experience:</label><br>
                 <textarea id="experience" name="experience" rows="4" cols="50" required></textarea><br><br>
                 <input type="submit" value="Generate" />
-              </form>
+            </form>
                 <div id="cvOutput"></div>
             </div>
         </body>
