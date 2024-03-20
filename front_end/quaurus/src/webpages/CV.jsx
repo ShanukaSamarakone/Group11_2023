@@ -2,11 +2,6 @@ import React from "react";
 import axios from "axios";
 
 function CV() {
-  function generateCV(event) {
-    event.preventDefault();
-    console.log("Form submitted!");
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -22,7 +17,7 @@ function CV() {
     } catch (error) {
       console.error("Error submitting CV:", error);
     }
-  }
+  };
 
   const openCVGenerator = () => {
     var popupWidth = 900;
@@ -76,16 +71,16 @@ function CV() {
         <body>
             <div class="container">
                 <h2><center>Let's Begin</center></h2>
-                <form id="cvForm" onsubmit="generateCV(event)" onSubmit={handleSubmit}>
-                    <label for="name">Name:</label><br>
+                <form id="cvForm">
+                    <label htmlFor="name">Name:</label><br>
                     <input type="text" id="name" name="name" required /><br>
-                    <label for="dob">DOB:</label><br>
+                    <label htmlFor="dob">DOB:</label><br>
                     <input type="date" id="dob" name="dob" required /><br>
-                    <label for="address">Address:</label><br>
+                    <label htmlFor="address">Address:</label><br>
                     <input type="text" id="address" name="address" required /><br>
-                    <label for="skills">Skills:</label><br>
+                    <label htmlFor="skills">Skills:</label><br>
                     <textarea id="skills" name="skills" rows="4" cols="50" required></textarea><br>
-                    <label for="experience">Experience:</label><br>
+                    <label htmlFor="experience">Experience:</label><br>
                     <textarea id="experience" name="experience" rows="4" cols="50" required></textarea><br><br>
                     <input type="submit" value="Generate" />
                 </form>
