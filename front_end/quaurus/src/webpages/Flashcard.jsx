@@ -204,7 +204,7 @@ function Flashcard() {
             <div className="menu menu-link">
               <div className="menu-content">
                 <p> Ready for quiz ? </p>
-                <a href="/front_end/Salah/Quiz Choice.html">Take Me There</a>
+                <a href="/QuizChoice">Take Me There</a>
               </div>
             </div>
           </div>

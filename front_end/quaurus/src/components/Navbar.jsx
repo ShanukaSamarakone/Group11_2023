@@ -18,7 +18,7 @@ function Navbar() {
               <a href="/Flashcard">Learn</a>
             </li>
             <li>
-              <a href="/front_end/Salah/Quiz Choice.html">Quiz</a>
+              <a href="/QuizChoice">Quiz</a>
             </li>
             <li>
               <a href="/CV">CV</a>
