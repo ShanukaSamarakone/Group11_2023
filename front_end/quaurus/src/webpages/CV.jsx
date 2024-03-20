@@ -4,15 +4,19 @@ import axios from "axios";
 function CV() {
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form data:", e.target);
     try {
-      const response = await axios.post("http://localhost:8080/cv/addCV", {
+      const formData = {
         name: e.target.name.value,
         dob: e.target.dob.value,
         address: e.target.address.value,
         skills: e.target.skills.value,
         experience: e.target.experience.value
-      });
-      console.log("CV successfully submitted:", response.data);
+      };
+      console.log("Form data object:", formData); 
+
+      const response = await axios.post("http://localhost:8080/cv/addCV", formData);
+      console.log("Response from server:", response.data); 
       e.target.reset();
     } catch (error) {
       console.error("Error submitting CV:", error);
