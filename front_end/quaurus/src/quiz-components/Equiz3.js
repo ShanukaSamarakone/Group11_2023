@@ -70,7 +70,7 @@ const Quiz = () => {
     }
   };
   const handleReturnClick = () => {
-    navigate('/');
+    navigate('/QuizChoice');
   }
   useEffect(() => {
     if (quizFinished) {

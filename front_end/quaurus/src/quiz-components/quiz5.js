@@ -87,7 +87,7 @@ const Quiz = () => {
             <div className="progress-bar-score" style={{ width: `${percentage}%` }}></div>
             <div className="progress-score">{`${Math.round(percentage)}%`}</div>
           </div>
-          <button className="Return" onClick={() => window.location.href = '/quiz'}>Return</button>
+          <button className="Return" onClick={() => window.location.href = '/QuizChoice'}>Return</button>
         </div>
       </section>
     );
