@@ -216,3 +216,163 @@ h1 {
     transform: scale(1.04);
   }
 
+/*Amaan Code*/
+
+.qc-progress-container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden; 
+    margin-left: 300px;
+    border: 1px solid black;
+}
+
+
+.qc-progress-bar-addition {
+    position: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #00d072;
+    border-radius: 50%; 
+    transition: width 1s ease;
+    animation: glow 1.5s infinite alternate; 
+}
+
+.qc-progress-bar-subtraction {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00d072;
+    border-radius: 50%; 
+    transition: width 1s ease;
+    animation: glow 1.5s infinite alternate; 
+}
+.qc-progress-bar-multiplication {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00d072;
+    border-radius: 50%; 
+    transition: width 1s ease;
+    animation: glow 1.5s infinite alternate; 
+}
+.qc-progress-bar-division{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00d072;
+    border-radius: 50%; 
+    transition: width 1s ease;
+    animation: glow 1.5s infinite alternate; 
+}
+.qc-progress-bar-percentage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00d072;
+    border-radius: 50%; 
+    transition: width 1s ease;
+    animation: glow 1.5s infinite alternate;
+}
+.qc-progress-bar-fullstop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00d072;
+    border-radius: 50%; 
+    transition: width 1s ease;
+    animation: glow 1.5s infinite alternate; 
+}
+.qc-progress-bar-comma{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00d072;
+    border-radius: 50%; 
+    transition: width 1s ease;
+    animation: glow 1.5s infinite alternate; 
+}
+.qc-progress-bar-exclamation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00d072;
+    border-radius: 50%; 
+    transition: width 1s ease;
+    animation: glow 1.5s infinite alternate; 
+}
+
+.qc-progress-addition {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgb(0, 0, 0);    
+}
+.qc-progress-subtraction{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgb(0, 0, 0);  
+}
+.qc-progress-multiplication{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgb(0, 0, 0);  
+}
+.qc-progress-division{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgb(0, 0, 0);  
+}
+.qc-progress-percentage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgb(0, 0, 0);  
+}
+.qc-progress-fullstop{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgb(0, 0, 0);  
+}
+.qc-progress-comma{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgb(0, 0, 0);  
+}
+.qc-progress-exclamation{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: rgb(0, 0, 0);  
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px #44ce1b, 0 0 20px #bbdb44, 0 0 30px #f2a134, 0 0 30px #e51f1f, 0 0 30px #ff0000, 0 0 30px #e51f1f, 0 0 30px #f2a134, 0 0 20px #bbdb44, 0 0 10px #44ce1b
+    }
+    to {
+        box-shadow: 0 0 20px #00d072, 0 0 30px, 0 0 30px #00d072;
+    }
+}
