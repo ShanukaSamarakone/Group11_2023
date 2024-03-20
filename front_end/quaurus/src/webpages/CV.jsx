@@ -13,10 +13,10 @@ function CV() {
         skills: e.target.skills.value,
         experience: e.target.experience.value
       };
-      console.log("Form data object:", formData); 
+      console.log("Form data object:", formData);
 
       const response = await axios.post("http://localhost:8080/cv/addCV", formData);
-      console.log("Response from server:", response.data); 
+      console.log("Response from server:", response.data);
       e.target.reset();
     } catch (error) {
       console.error("Error submitting CV:", error);
@@ -25,7 +25,7 @@ function CV() {
 
   const openCVGenerator = () => {
     var popupWidth = 900;
-    var popupHeight = 700; 
+    var popupHeight = 700;
     var left = (window.screen.width - popupWidth) / 2;
     var top = (window.screen.height - popupHeight) / 2;
     var options =
@@ -55,16 +55,16 @@ function CV() {
                     border-radius: 10px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
                 }
-  
+
                 h2 {
                     font-size: 2.2rem;
                     color: #00e77f;
                 }
-  
+
                 form {
                     width: 100%;
                 }
-  
+
                 form label,
                 form input,
                 form textarea {
@@ -75,19 +75,19 @@ function CV() {
         <body>
             <div class="container">
                 <h2><center>Let's Begin</center></h2>
-                <form id="cvForm" onSubmit={handleSubmit}> 
-                <label htmlFor="name">Name:</label><br>
-                <input type="text" id="name" name="name" required /><br>
-                <label htmlFor="dob">DOB:</label><br>
-                <input type="date" id="dob" name="dob" required /><br>
-                <label htmlFor="address">Address:</label><br>
-                <input type="text" id="address" name="address" required /><br>
-                <label htmlFor="skills">Skills:</label><br>
-                <textarea id="skills" name="skills" rows="4" cols="50" required></textarea><br>
-                <label htmlFor="experience">Experience:</label><br>
-                <textarea id="experience" name="experience" rows="4" cols="50" required></textarea><br><br>
-                <input type="submit" value="Generate" />
-            </form>
+                <form id="cvForm"> 
+                  <label htmlFor="name">Name:</label><br>
+                  <input type="text" id="name" name="name" required /><br>
+                  <label htmlFor="dob">DOB:</label><br>
+                  <input type="date" id="dob" name="dob" required /><br>
+                  <label htmlFor="address">Address:</label><br>
+                  <input type="text" id="address" name="address" required /><br>
+                  <label htmlFor="skills">Skills:</label><br>
+                  <textarea id="skills" name="skills" rows="4" cols="50" required></textarea><br>
+                  <label htmlFor="experience">Experience:</label><br>
+                  <textarea id="experience" name="experience" rows="4" cols="50" required></textarea><br><br>
+                  <input type="submit" value="Generate" />
+                </form>
                 <div id="cvOutput"></div>
             </div>
         </body>
