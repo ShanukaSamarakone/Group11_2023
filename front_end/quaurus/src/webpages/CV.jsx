@@ -160,7 +160,7 @@ function CV() {
           <label htmlFor="experience">Experience:</label>
           <input type="text" id="experience" name="experience" value={formData.experience} onChange={handleChange} required />
         </div>
-        <button type="submit" style={{ gridColumn: "1 / span 2" }}>Submit</button>
+        <button type="submit" style={{ gridColumn: "1 / span 2" }}>Generate</button>
       </form>
   </div>
 )}
