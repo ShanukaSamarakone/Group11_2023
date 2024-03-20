@@ -28,15 +28,21 @@ function CV() {
         skills: "",
         experience: ""
       });
-      setShowForm(false); // Hide the form after submission
+      setShowForm(false); 
     } catch (error) {
       console.error("Error:", error);
     }
   };
 
   const openCVGenerator = (template) => {
-    setShowForm(true);
-    setSelectedTemplate(template);
+    setSelectedTemplate(template); 
+    if (showForm && selectedTemplate === template) {
+      setShowForm(false); 
+    } else {
+      setShowForm(true); 
+      const formSection = document.getElementById('form-section'); 
+      formSection.scrollIntoView({ behavior: 'smooth' }); 
+    }
   };
 
   return (
@@ -51,7 +57,7 @@ function CV() {
           <h3>Pick Your CV</h3>
         </div>
         
-      <div className="cv-container"style={{ display: "flex", justifyContent: "center", paddingTop: "0px", paddingBottom: "110px", marginTop: "-60px" }}>
+      <div className="cv-container"style={{ display: "flex", justifyContent: "center", paddingTop: "0px", paddingBottom: "150px", marginTop: "-70px", marginBottom: "-120px"}}>
         <div className="cv" onDoubleClick={() => openCVGenerator("template1")}>
           <div className="cv-face cvs-face">
             <div className="cv-content">
@@ -125,33 +131,43 @@ function CV() {
         </div>
       </div>
 
-      {showForm && (
-      <div className="cv-form">
-        <h2>CV Form</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-          <label htmlFor="dob">DOB:</label>
-          <input type="date" id="dob" name="dob" value={formData.dob} onChange={handleChange} required /><div></div>
-          <label htmlFor="address">Address:</label>
-          <input type="text" id="address" name="address" value={formData.address} onChange={handleChange} required />
-         
-          <label htmlFor="skills">Skills:</label>
-          <div className="text-area">
-            <textarea id="skills" name="skills" rows="2" cols="50" value={formData.skills} onChange={handleChange} required></textarea>
+      <section id="form-section" className="form-section" style={{ marginTop: "30px", padding: "20px", marginBottom: "-60px" }}>
+  {showForm && (
+    <div className="cv-form" style={{ marginTop: "150px", marginBottom: "0px", textAlign: "center", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5px", border: "3px solid black", borderRadius: "10px", padding: "30px", backgroundImage: "url('assets/images/background.jpeg')", backgroundSize: "cover" }}>
+      <h2 style={{ gridColumn: "1 / span 2" }}>CV Form</h2>
+      <form onSubmit={handleSubmit} style={{ gridColumn: "1 / span 2" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5px" }}>
+          <div>
+            <label htmlFor="name">Name:</label>
+            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
           </div>
-          
+          <div>
+            <label htmlFor="dob">DOB:</label>
+            <input type="date" id="dob" name="dob" value={formData.dob} onChange={handleChange} required />
+          </div>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5px" }}>
+          <div>
+            <label htmlFor="address">Address:</label>
+            <input type="text" id="address" name="address" value={formData.address} onChange={handleChange} required />
+          </div>
+          <div>
+            <label htmlFor="skills">Skills:</label>
+            <input type="text" id="skills" name="skills" value={formData.skills} onChange={handleChange} required />
+          </div>
+        </div>
+        <div style={{ marginBottom: "15px", gridColumn: "1 / span 2" }}>
           <label htmlFor="experience">Experience:</label>
-          <div className="text-area">
-            <textarea id="experience" name="experience" rows="2" cols="50" value={formData.experience} onChange={handleChange} required></textarea>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    )}
+          <input type="text" id="experience" name="experience" value={formData.experience} onChange={handleChange} required />
+        </div>
+        <button type="submit" style={{ gridColumn: "1 / span 2" }}>Submit</button>
+      </form>
+  </div>
+)}
+</section>
       </section>
 
-      <footer style={{ backgroundColor: 'var(--black)', color: 'var(--white)', padding: '20px', textAlign: 'center', borderTop: '1px solid var(--green)' }}>
+      <footer style={{ backgroundColor: 'var(--black)', color: 'var(--white)', padding: '25px', textAlign: 'center', borderTop: '1px solid var(--green)' }}>
         <p>&copy; 2024 Quaurus. All rights reserved.</p>
       </footer>
     </div>
@@ -160,4 +176,3 @@ function CV() {
 }
 
 export default CV;
-
