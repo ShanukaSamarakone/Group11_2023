@@ -2,14 +2,11 @@ import React from "react";
 import axios from "axios";
 
 function CV() {
-  // Define the generateCV function
   function generateCV(event) {
     event.preventDefault();
-    // Your logic to handle form submission
     console.log("Form submitted!");
   }
 
-  // Function to handle form submission using axios
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -21,7 +18,6 @@ function CV() {
         experience: e.target.experience.value
       });
       console.log("CV successfully submitted:", response.data);
-      // Reset form data after successful submission if needed
       e.target.reset();
     } catch (error) {
       console.error("Error submitting CV:", error);
@@ -29,8 +25,8 @@ function CV() {
   }
 
   const openCVGenerator = () => {
-    var popupWidth = 900; // Adjust as needed
-    var popupHeight = 700; // Adjust as needed
+    var popupWidth = 900;
+    var popupHeight = 700; 
     var left = (window.screen.width - popupWidth) / 2;
     var top = (window.screen.height - popupHeight) / 2;
     var options =
