@@ -22,7 +22,7 @@ function CV() {
       console.error("Error submitting CV:", error);
     }
   };
-
+  
   const openCVGenerator = () => {
     var popupWidth = 900;
     var popupHeight = 700;
