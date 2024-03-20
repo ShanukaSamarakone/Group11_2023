@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 function CV() {
   const openCVGenerator = () => {
@@ -162,7 +163,7 @@ function CV() {
         </div>
       </section>
 
-      <footer style={{ backgroundColor: 'var(--black)', color: 'var(--white)', padding: '5px', textAlign: 'center', borderTop: '1px solid var(--green)' }}>
+      <footer style={{ backgroundColor: 'var(--black)', color: 'var(--white)', padding: '20px', textAlign: 'center', borderTop: '1px solid var(--green)' }}>
         <p>&copy; 2024 Quaurus. All rights reserved.</p>
 </footer>
 
