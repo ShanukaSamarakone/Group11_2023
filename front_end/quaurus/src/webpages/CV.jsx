@@ -74,6 +74,24 @@ function CV() {
     `);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8080/cv/addCV", {
+        name: e.target.name.value,
+        dob: e.target.dob.value,
+        address: e.target.address.value,
+        skills: e.target.skills.value,
+        experience: e.target.experience.value
+      });
+      console.log("CV successfully submitted:", response.data);
+      // Reset form data after successful submission if needed
+      e.target.reset();
+    } catch (error) {
+      console.error("Error submitting CV:", error);
+    }
+  }
+
   return (
     <div>
       <section className="home" id="home">
