@@ -2,6 +2,32 @@ import React from "react";
 import axios from "axios";
 
 function CV() {
+  // Define the generateCV function
+  function generateCV(event) {
+    event.preventDefault();
+    // Your logic to handle form submission
+    console.log("Form submitted!");
+  }
+
+  // Function to handle form submission using axios
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8080/cv/addCV", {
+        name: e.target.name.value,
+        dob: e.target.dob.value,
+        address: e.target.address.value,
+        skills: e.target.skills.value,
+        experience: e.target.experience.value
+      });
+      console.log("CV successfully submitted:", response.data);
+      // Reset form data after successful submission if needed
+      e.target.reset();
+    } catch (error) {
+      console.error("Error submitting CV:", error);
+    }
+  }
+
   const openCVGenerator = () => {
     var popupWidth = 900; // Adjust as needed
     var popupHeight = 700; // Adjust as needed
@@ -54,18 +80,18 @@ function CV() {
         <body>
             <div class="container">
                 <h2><center>Let's Begin</center></h2>
-                <form id="cvForm" onsubmit="generateCV(event)">
+                <form id="cvForm" onsubmit="generateCV(event)" onSubmit={handleSubmit}>
                     <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required><br>
+                    <input type="text" id="name" name="name" required /><br>
                     <label for="dob">DOB:</label><br>
-                    <input type="date" id="dob" name="dob" required><br>
+                    <input type="date" id="dob" name="dob" required /><br>
                     <label for="address">Address:</label><br>
-                    <input type="text" id="address" name="address" required><br>
+                    <input type="text" id="address" name="address" required /><br>
                     <label for="skills">Skills:</label><br>
                     <textarea id="skills" name="skills" rows="4" cols="50" required></textarea><br>
                     <label for="experience">Experience:</label><br>
                     <textarea id="experience" name="experience" rows="4" cols="50" required></textarea><br><br>
-                    <input type="submit" value="Generate">
+                    <input type="submit" value="Generate" />
                 </form>
                 <div id="cvOutput"></div>
             </div>
@@ -73,24 +99,6 @@ function CV() {
         </html>
     `);
   };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:8080/cv/addCV", {
-        name: e.target.name.value,
-        dob: e.target.dob.value,
-        address: e.target.address.value,
-        skills: e.target.skills.value,
-        experience: e.target.experience.value
-      });
-      console.log("CV successfully submitted:", response.data);
-      // Reset form data after successful submission if needed
-      e.target.reset();
-    } catch (error) {
-      console.error("Error submitting CV:", error);
-    }
-  }
 
   return (
     <div>
