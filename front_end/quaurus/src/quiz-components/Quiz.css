@@ -333,6 +333,8 @@ input {
     white-space: nowrap; 
 }
 
+/* Amaans Code */
+
 .progress-container {
     position: relative;
     width: 200px; 
@@ -413,3 +415,5 @@ input {
     font-size: 14px;
     color: #000;
 }
+
+/* End of Amaans Code */
