@@ -5,6 +5,7 @@ import CV from "./webpages/CV";
 import Map from "./webpages/Map";
 import Leaderboard from "./webpages/Leaderboard";
 import Login from "./webpages/Login";
+import RegistrationForm from "./webpages/RegistrationForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Map" element={<Map />} />
           <Route path="/Leaderboard" element={<Leaderboard />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/RegistrationForm" element={<RegistrationForm />}/>
         </Routes>
       </BrowserRouter>
       
