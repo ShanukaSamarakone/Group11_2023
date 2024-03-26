@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function Flashcard() {
+  const [error, setError] = useState(null);
+
   const [addition, setAdditionFlashcard] = useState([]);
 
   useEffect(() => {
@@ -9,10 +11,28 @@ function Flashcard() {
   }, []);
 
   const loadAdditionFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/1"
-    );
-    setAdditionFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/1"
+      );
+      setAdditionFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const [subtraction, setSubtractionFlashcard] = useState([]);
@@ -22,10 +42,28 @@ function Flashcard() {
   }, []);
 
   const loadSubtractionFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/2"
-    );
-    setSubtractionFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/2"
+      );
+      setSubtractionFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const [multiplication, setMultiplicationFlashcard] = useState([]);
@@ -35,10 +73,28 @@ function Flashcard() {
   }, []);
 
   const loadMultiplicationFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/3"
-    );
-    setMultiplicationFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/3"
+      );
+      setMultiplicationFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const [division, setDivisionFlashcard] = useState([]);
@@ -48,10 +104,28 @@ function Flashcard() {
   }, []);
 
   const loadDivisionFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/4"
-    );
-    setDivisionFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/4"
+      );
+      setDivisionFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const [fraction, setFractionFlashcard] = useState([]);
@@ -61,10 +135,28 @@ function Flashcard() {
   }, []);
 
   const loadFractionFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/5"
-    );
-    setFractionFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/5"
+      );
+      setFractionFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const [percentage, setPercentageFlashcard] = useState([]);
@@ -74,10 +166,28 @@ function Flashcard() {
   }, []);
 
   const loadPercentageFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/6"
-    );
-    setPercentageFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/6"
+      );
+      setPercentageFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const [fullStop, setFullStopFlashcard] = useState([]);
@@ -87,10 +197,28 @@ function Flashcard() {
   }, []);
 
   const loadFullStopFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/7"
-    );
-    setFullStopFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/7"
+      );
+      setFullStopFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const [comma, setCommaFlashcard] = useState([]);
@@ -100,10 +228,28 @@ function Flashcard() {
   }, []);
 
   const loadCommaFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/8"
-    );
-    setCommaFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/8"
+      );
+      setCommaFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const [questionMark, setQuestionMarkFlashcard] = useState([]);
@@ -113,10 +259,28 @@ function Flashcard() {
   }, []);
 
   const loadQuestionMarkFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/9"
-    );
-    setQuestionMarkFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/9"
+      );
+      setQuestionMarkFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const [exclamationMark, setExclamationMarkFlashcard] = useState([]);
@@ -126,10 +290,28 @@ function Flashcard() {
   }, []);
 
   const loadExclamationMarkFlashcard = async () => {
-    const result = await axios.get(
-      "http://localhost:8080/flashcard/getFlashcard/10"
-    );
-    setExclamationMarkFlashcard(result.data);
+    try {
+      const result = await axios.get(
+        "http://localhost:8080/flashcard/getFlashcard/10"
+      );
+      setExclamationMarkFlashcard(result.data);
+      setError(null);
+    } catch (error) {
+      if (error.response) {
+        console.error(
+          "Backend responded with an error:",
+          error.response.status,
+          error.response.data
+        );
+        setError(`Backend error: ${error.response.status}`);
+      } else if (error.request) {
+        console.error("No response received from the backend. Is it running?");
+        setError("Could not connect to the backend. Is it running?");
+      } else {
+        console.error("Error", error.message);
+        setError(`An error occurred: ${error.message}`);
+      }
+    }
   };
 
   const renderFlashcardsWithSpaces = (text) => {
@@ -204,7 +386,7 @@ function Flashcard() {
             <div className="menu menu-link">
               <div className="menu-content">
                 <p> Ready for quiz ? </p>
-                <a href="/front_end/Salah/Quiz Choice.html">Take Me There</a>
+                <a href="/QuizChoice">Take Me There</a>
               </div>
             </div>
           </div>
@@ -225,7 +407,7 @@ function Flashcard() {
                 {addition.flashcard ? (
                   renderFlashcardsWithSpaces(addition.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>
@@ -243,7 +425,7 @@ function Flashcard() {
                 {subtraction.flashcard ? (
                   renderFlashcardsWithSpaces(subtraction.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>
@@ -261,7 +443,7 @@ function Flashcard() {
                 {multiplication.flashcard ? (
                   renderFlashcardsWithSpaces(multiplication.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>
@@ -282,7 +464,7 @@ function Flashcard() {
                 {division.flashcard ? (
                   renderFlashcardsWithSpaces(division.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>
@@ -317,7 +499,7 @@ function Flashcard() {
                 {fraction.flashcard ? (
                   renderFlashcardsWithSpaces(fraction.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>
@@ -335,7 +517,7 @@ function Flashcard() {
                 {percentage.flashcard ? (
                   renderFlashcardsWithSpaces(percentage.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>
@@ -362,7 +544,7 @@ function Flashcard() {
                 {fullStop.flashcard ? (
                   renderFlashcardsWithSpaces(fullStop.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>
@@ -380,7 +562,7 @@ function Flashcard() {
                 {comma.flashcard ? (
                   renderFlashcardsWithSpaces(comma.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>
@@ -398,7 +580,7 @@ function Flashcard() {
                 {questionMark.flashcard ? (
                   renderFlashcardsWithSpaces(questionMark.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>
@@ -416,7 +598,7 @@ function Flashcard() {
                 {exclamationMark.flashcard ? (
                   renderFlashcardsWithSpaces(exclamationMark.flashcard)
                 ) : (
-                  <span> Data not loaded </span>
+                  <span> {error && <p>Error: {error}</p>} </span>
                 )}
               </p>
             </div>

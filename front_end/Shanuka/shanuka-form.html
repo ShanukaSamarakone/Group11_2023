@@ -19,10 +19,10 @@
       width: 90%;
       height: 75%;
       max-width: 700px;
-      background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background */
+      background-color: rgba(255, 255, 255, 0.9); 
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
     }
 
     h2 {
@@ -44,7 +44,7 @@
 <body>
   <div class="container">
     <h2><center>Let's Begin</center></h2>
-    <form id="cvForm" onsubmit="generateCV(event)">
+    <form id="cvForm">
       <label for="name">Name:</label><br>
       <input type="text" id="name" name="name" required><br>
       <label for="dob">DOB:</label><br>
@@ -60,5 +60,11 @@
     <div id="cvOutput"></div>
   </div>
   <script src="cv.js"> </script>
+  <script>
+    document.getElementById("cvForm").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      handleSubmit(event); 
+    });
+  </script>
 </body>
 </html>
